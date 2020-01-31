@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <!-- CSS Files -->
+    <link href="../Content/MadStorePage/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/MadStorePage/assets/css/material-kit.css?v=1.2.1" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="../Content/MadStorePage/assets/assets-for-demo/vertical-nav.css" rel="stylesheet" />
+    <link href="../Content/MadStorePage/assets/assets-for-demo/demo.css" rel="stylesheet" />
+
+</head>
+<body>
+    <nav class="navbar navbar-inverse" role="navigation-demo">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#pablo">Navbar with notification</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navigation-example-2">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#pablo">
+                            <i class="material-icons">home</i>
+                            Discover
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#pablo">
+                            <i class="material-icons">store</i>
+                            Discover
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#pablo">
+                            <i class="material-icons">group</i>
+                            Wishlist
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#pablo" class="btn btn-danger btn-raised btn-fab btn-fab-mini" data-toggle="dropdown">
+                            <i class="material-icons">email</i>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#pablo" class="profile-photo dropdown-toggle" data-toggle="dropdown">
+                            <div class="profile-photo-small">
+                                <img src="../Content/MadStorePage/assets/img/faces/avatar.jpg" alt="Circle Image" class="img-circle img-responsive">
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header">
+                                Dropdown header
+                            </li>
+                            <li>
+                                <a href="#pablo">Me</a>
+                            </li>
+                            <li>
+                                <a href="#pablo">Settings and other stuff</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="#pablo">Sign out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-->
+    </nav>
+
+    <div style="padding:20px; background-color:#FF9800; width:1000px; border-radius:7px; height: 80px; margin-left:260px; margin-top:40px; box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 1, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)"></div>
+
+    <div class="main main-raised col-md-10" style="margin-top : -40px; margin-bottom: 35px; margin-left:130px;">
+
+        <div class="col-md-11" style="padding:40px; padding-left:60px;">
+            @RenderBody()
+        </div>
+    </div>
+
+
+    <footer class="footer footer-black footer-big col-md-12">
+        <div class="container">
+            <div class="content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>About Us</h5>
+                        <p>Creative Tim is a startup that creates design tools that make the web development process faster and easier. </p> <p>We love the web and care deeply for how users interact with a digital product. We power businesses and individuals to create better looking web projects around the world. </p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Social Feed</h5>
+                        <div class="social-feed">
+                            <div class="feed-line">
+                                <i class="fa fa-twitter"></i>
+                                <p>How to handle ethical disagreements with your clients.</p>
+                            </div>
+                            <div class="feed-line">
+                                <i class="fa fa-twitter"></i>
+                                <p>The tangible benefits of designing at 1x pixel density.</p>
+                            </div>
+                            <div class="feed-line">
+                                <i class="fa fa-facebook-square"></i>
+                                <p>A collection of 25 stunning sites that you can use for inspiration.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Instagram Feed</h5>
+                        <div class="gallery-feed">
+                            <img src="../Content/MadStorePage/assets/img/faces/card-profile6-square.jpg" class="img img-raised img-rounded" alt="" />
+                            <img src="../Content/MadStorePage/assets/img/faces/christian.jpg" class="img img-raised img-rounded" alt="" />
+                            <img src="../Content/MadStorePage/assets/img/faces/card-profile4-square.jpg" class="img img-raised img-rounded" alt="" />
+                            <img src="../Content/MadStorePage/assets/img/faces/card-profile1-square.jpg" class="img img-raised img-rounded" alt="" />
+                            <img src="../Content/MadStorePage/assets/img/faces/marc.jpg" class="img img-raised img-rounded" alt="" />
+                            <img src="../Content/MadStorePage/assets/img/faces/kendall.jpg" class="img img-raised img-rounded" alt="" />
+                            <img src="../Content/MadStorePage/assets/img/faces/card-profile5-square.jpg" class="img img-raised img-rounded" alt="" />
+                            <img src="../Content/MadStorePage/assets/img/faces/card-profile2-square.jpg" class="img img-raised img-rounded" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+            <ul class="pull-left">
+                <li>
+                    <a href="#pablo">
+                        Blog
+                    </a>
+                </li>
+                <li>
+                    <a href="#pablo">
+                        Presentation
+                    </a>
+                </li>
+                <li>
+                    <a href="#pablo">
+                        Discover
+                    </a>
+                </li>
+                <li>
+                    <a href="#pablo">
+                        Payment
+                    </a>
+                </li>
+                <li>
+                    <a href="#pablo">
+                        Contact Us
+                    </a>
+                </li>
+            </ul>
+            <div class="copyright pull-right">
+                Copyright &copy;
+                <script>document.write(new Date().getFullYear())</script> Creative Tim All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <nav id="cd-vertical-nav" style="margin-left:-50px;">
+        <ul>
+            <li>
+                <a href="#buttons" data-number="1">
+                    <span class="cd-dot"></span>
+                    <span class="cd-label">Basic Elements</span>
+                </a>
+            </li>
+            <li>
+                <a href="#navigation" data-number="2">
+                    <span class="cd-dot"></span>
+                    <span class="cd-label">Navigation</span>
+                </a>
+            </li>
+            <li>
+                <a href="#notifications" data-number="3">
+                    <span class="cd-dot"></span>
+                    <span class="cd-label">Notifications</span>
+                </a>
+            </li>
+            <li>
+                <a href="#footers" data-number="4">
+                    <span class="cd-dot"></span>
+                    <span class="cd-label">Footers</span>
+                </a>
+            </li>
+            <li>
+                <a href="#typography" data-number="5">
+                    <span class="cd-dot"></span>
+                    <span class="cd-label">Typography</span>
+                </a>
+            </li>
+            <li>
+                <a href="#contentAreas" data-number="6">
+                    <span class="cd-dot"></span>
+                    <span class="cd-label">Content Areas</span>
+                </a>
+            </li>
+            <li>
+                <a href="#cards" data-number="7">
+                    <span class="cd-dot"></span>
+                    <span class="cd-label">Cards</span>
+                </a>
+            </li>
+            <li>
+                <a href="#morphingCards" data-number="8">
+                    <span class="cd-dot"></span>
+                    <span class="cd-label">Morphing Cards</span>
+                </a>
+            </li>
+            <li>
+                <a href="#javascriptComponents" data-number="9">
+                    <span class="cd-dot"></span>
+                    <span class="cd-label">Javascript</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!--   Core JS Files   -->
+    <script src="../Content/MadStorePage/assets/js/jquery.min.js" type="text/javascript"></script>
+    <script src="../Content/MadStorePage/assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../Content/MadStorePage/assets/js/material.min.js"></script>
+    <!--  Plugin for Date Time Picker and Full Calendar Plugin-->
+    <script src="../Content/MadStorePage/assets/js/moment.min.js"></script>
+    <!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="../Content/MadStorePage/assets/js/nouislider.min.js" type="text/javascript"></script>
+    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="../Content/MadStorePage/assets/js/bootstrap-datetimepicker.js" type="text/javascript"></script>
+    <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+    <script src="../Content/MadStorePage/assets/js/bootstrap-selectpicker.js" type="text/javascript"></script>
+    <!--	Plugin for Tags, full documentation here: http://xoxco.com/projects/code/tagsinput/  -->
+    <script src="../Content/MadStorePage/assets/js/bootstrap-tagsinput.js"></script>
+    <!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+    <script src="../Content/MadStorePage/assets/js/jasny-bootstrap.min.js"></script>
+    <!-- Plugin For Google Maps -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+
+    <!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
+    <script src="../Content/MadStorePage/assets/js/material-kit.js?v=1.2.1" type="text/javascript"></script>
+    <!-- Fixed Sidebar Nav - JS For Demo Purpose, Don't Include it in your project -->
+    <script src="../Content/MadStorePage/assets/assets-for-demo/modernizr.js" type="text/javascript"></script>
+    <script src="../Content/MadStorePage/assets/assets-for-demo/vertical-nav.js" type="text/javascript"></script>
+
+</body>
+</html>

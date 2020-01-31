@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B3C2AEF-15D0-4F5D-AFA8-C07510B164A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MADStore.DAL</RootNamespace>
+    <AssemblyName>MADStore.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\ICategoryDAL.cs" />
+    <Compile Include="Abstract\IColorDAL.cs" />
+    <Compile Include="Abstract\ICombinationDAL.cs" />
+    <Compile Include="Abstract\ICommentDAL.cs" />
+    <Compile Include="Abstract\ILikeDAL.cs" />
+    <Compile Include="Abstract\IModelistProcessDAL.cs" />
+    <Compile Include="Abstract\IOrderDAL.cs" />
+    <Compile Include="Abstract\IProductDAL.cs" />
+    <Compile Include="Abstract\IShipperDAL.cs" />
+    <Compile Include="Abstract\ISizeDAL.cs" />
+    <Compile Include="Abstract\IUserDAL.cs" />
+    <Compile Include="Abstract\IUserTypeDAL.cs" />
+    <Compile Include="Concrete\CategoryRepository.cs" />
+    <Compile Include="Concrete\ColorRepository.cs" />
+    <Compile Include="Concrete\CombinationRepository.cs" />
+    <Compile Include="Concrete\CommentRepository.cs" />
+    <Compile Include="Concrete\LikeRepsitory.cs" />
+    <Compile Include="Concrete\ModelistProcessRepository.cs" />
+    <Compile Include="Concrete\OrderRepository.cs" />
+    <Compile Include="Concrete\ProductRepository.cs" />
+    <Compile Include="Concrete\ShipperRepository.cs" />
+    <Compile Include="Concrete\SizeRepository.cs" />
+    <Compile Include="Concrete\UserRepository.cs" />
+    <Compile Include="Concrete\UserTypeRepository.cs" />
+    <Compile Include="MADStoreContext\MADStoreDbContext.cs" />
+    <Compile Include="MADStoreContext\MyStrategy.cs" />
+    <Compile Include="Mappings\ApprovalMapping.cs" />
+    <Compile Include="Mappings\CombinationPhotosMapping.cs" />
+    <Compile Include="Mappings\OrderDetailMapping.cs" />
+    <Compile Include="Mappings\ProductDetailMapping.cs" />
+    <Compile Include="Mappings\UserMapping.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MADStore.Core\MADStore.Core.csproj">
+      <Project>{c7f216db-0002-4f96-96d0-22631e77526f}</Project>
+      <Name>MADStore.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MADStore.Model\MADStore.Model.csproj">
+      <Project>{0eb6fefc-96d3-4649-b238-903c8e8daac2}</Project>
+      <Name>MADStore.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,58 @@
+﻿@using MADStore.Model
+@model List<Product>
+
+@{
+    ViewBag.Title = "Products";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<br />
+
+<div class="tab-content">
+    <div >
+        <div class="col-lg-2" style="float:left">
+            <ul id="categoryMenu" class="nav nav-pills nav-stacked">
+                <li class="active" style="margin-left:-50px;"><a href='javascript:void(0)'">Tüm Kategoriler</a></li>
+                @Html.Action("_CategoryMenu", "User")
+            </ul>
+        </div>
+        <div id="productList" class="col-lg-10">
+            @Html.Action("_CategoryOfProducts", "User")
+        </div>
+    </div>
+</div>
+@*Ajax kodu yazdık ki sepet artsın ve aynı anda görünsün.*@
+
+@section scripts{
+    <script>
+        function AddToMyCart(productId) {
+            $.ajax
+            ({
+                type: "Get",
+                url: '@Url.Action("AddToCart", "Cart")', 
+                data: { id: productId },
+                    success: function (data) 
+                    {
+                        $("#menu li:nth-child(2)").html(data);
+                    }
+            })
+        }
+
+        function CategoryByProductList(id) 
+        {
+            $("#categoryMenu li").removeClass("active");
+            $("#menu_" + id).addClass("active");
+
+            $.ajax
+                ({
+                    type: "Get",
+                    url: '@Url.Action("_CategoryOfProducts", "User")',
+                    data: { id: id },
+                    success: function (data)
+                    {
+                        $("#productList").html(data);
+                    }
+            })
+        }
+    </script>
+}

@@ -1,0 +1,36 @@
+
+CORE
+Core katmaný içerisine Entity klasörü oluþturduk.
+Entity klasörünün içerisine BaseEntity classý oluþturduk.
+DAL klasörü oluþturduk. IRepository interface'ini oluþturduk.
+Ýçerisine Entity Framework klasörü oluþturduk.
+Entity Framework klasörüne EFRepositoryBase ve EFSingletonContext classlarýný ekledik.
+Core katmanýna DbContext'i algýlamasý için Entity Framework ekledik.
+
+MODEL
+Core katmanýný referans aldýk.
+Tüm classlarý oluþturup mappinglerini(navigation propertylerini) oluþturduk.
+
+DAL
+Core ve Modeli referans aldýk.
+Abstract ve Concrete adýnda klasörler ekledik.
+Abstract klasörüne classlarýn modellerin interfaceleri oluþturuldu. (Ara tablolar hariç).
+Concrete klasörüne classlarý tanýmladýk.
+Mapping klasörü oluþturup içerisine ara tablolardaki haskeyleri belirledik. (çift anahtar)
+DAL'da MADStoreContext klasörü açtýk ve içerisine MADStoreDBContext classý açýp database baðlantýsýný ve tablolarýn DBSetlerini oluþturduk.
+
+BLL
+DAL, Model ve Core'u referans aldýk.
+Manage Nugetten Ninject 3.2.0 ekledik.
+Abstract, Concrete, BaseService ve IOC klasörleri oluþturduk.
+BaseService klasörü içerisine IBaseService interface'i oluþturup BaseEntity'i kalýtým alan tüm classlarlar bu methodlara eriþebilsin dedik.
+Abstract klasörü içerisine model classlarýnýn interfacelerini oluþturduk ve IBaseService'yi kalýtým aldýk.
+Concrete klasörü içerisine model classlarýnýn servicelerini oluþturduk ve Service interfacelerini kalýtým aldýk.
+IOC klasörü içerisine Ninject klasörü oluþturduk ve CustomDALModule classý açtýk. Bu class içerisinde DAL'daki classlarý interfaceleri ile baðladýk.
+
+UI
+BLL, DAL, Model'i referans aldýk.
+Ninject MVC4 3.2.0 ekledik.
+Tools klasörü oluþturduk. Ýçerisine MailHelper classý açýp mail gönderme bilgilerini ekledik.
+App Start klasörünün içindeki RouteConfig'de BLL'deki classlarý interfaceleri ile baðladýk.
+

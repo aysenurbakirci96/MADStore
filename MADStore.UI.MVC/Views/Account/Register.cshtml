@@ -1,0 +1,98 @@
+﻿@model MADStore.Model.User
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+<div class="card card-signup" style="height:620px; margin-top:-50px; width:450px;">
+    <h3 class="card-title text-center">ÜYE OL</h3>
+    <div class="row" style="margin-left:20px;">
+        <div class="col-md-11">
+            <form class="form" method="post" action="">
+
+                <div class="card-content">
+
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">email</i>
+                        </span>
+                        @Html.TextBoxFor(a => a.Email, new { @class = "form-control", type = "email", placeholder = "E-mail Giriniz..." })
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">lock_outline</i>
+                        </span>
+                        @Html.TextBoxFor(a => a.Password, new { @class = "form-control", type = "password", placeholder = " Şifre Giriniz..." })
+                    </div>
+                    <div class="input-group">
+                        <table>
+                            <tr>
+                                <td>
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">person</i>
+                                    </span>
+                                </td>
+                                <td>@Html.TextBoxFor(a => a.Name, new { @class = "form-control", placeholder = "Adınızı Giriniz..." })</td>
+                                <td>@Html.TextBoxFor(a => a.Surname, new { @class = "form-control", placeholder = "Soyadınızı Giriniz..." })</td>
+                            </tr>
+                        </table>
+
+
+                        @*</div>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <i class="material-icons">face</i>
+
+                </span>*@
+
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">phone</i>
+                        </span>
+                        @Html.TextBoxFor(a => a.Phone, new { @class = "form-control", placeholder = "Telefon Giriniz ..." })
+                    </div>
+
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <i class="material-icons">store</i>
+
+                        </span>
+                        @Html.TextBoxFor(a => a.Address, new { @class = "form-control", placeholder = "Adres Giriniz..." })
+                    </div>
+                    <!-- If you want to add a checkbox to this form, uncomment this code -->
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="optionsCheckboxes" checked>
+                            <a href="#something">Üyelik sözleşmesini</a> okudum, kabul ediyorum.
+                        </label>
+                    </div> 
+                    <div>
+                        <input type="submit" name="name" value="KAYIT OL" class="btn btn-danger btn-default" style="background:linear-gradient(60deg, white,#FF9800,black); width:350px; font-size:14px;">
+                    </div>
+                </div>
+                <br />
+                <div>
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger">
+                            <div class="container">
+                                <div class="alert-icon">
+                                    <i class="material-icons">error_outline</i>
+                                </div>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true"><i class="material-icons">clear</i></span>
+                                </button>
+                                 @ViewBag.Error
+                            </div>
+                        </div>
+                    }
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+

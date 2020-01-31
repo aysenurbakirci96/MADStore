@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MADStore.Core", "MADStore.Core\MADStore.Core.csproj", "{C7F216DB-0002-4F96-96D0-22631E77526F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MADStore.Model", "MADStore.Model\MADStore.Model.csproj", "{0EB6FEFC-96D3-4649-B238-903C8E8DAAC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MADStore.DAL", "MADStore.DAL\MADStore.DAL.csproj", "{1B3C2AEF-15D0-4F5D-AFA8-C07510B164A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MADStore.BLL", "MADStore.BLL\MADStore.BLL.csproj", "{7D277061-C6F3-4FB5-AB32-7C87C343EA8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MADStore.UI.MVC", "MADStore.UI.MVC\MADStore.UI.MVC.csproj", "{A60D55A4-4039-4BF7-A5E1-C7594E166985}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{49B3AFAD-1521-473A-85C1-4C84E1570304}"
+	ProjectSection(SolutionItems) = preProject
+		Notes.txt = Notes.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7F216DB-0002-4F96-96D0-22631E77526F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7F216DB-0002-4F96-96D0-22631E77526F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7F216DB-0002-4F96-96D0-22631E77526F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7F216DB-0002-4F96-96D0-22631E77526F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EB6FEFC-96D3-4649-B238-903C8E8DAAC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EB6FEFC-96D3-4649-B238-903C8E8DAAC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EB6FEFC-96D3-4649-B238-903C8E8DAAC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EB6FEFC-96D3-4649-B238-903C8E8DAAC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B3C2AEF-15D0-4F5D-AFA8-C07510B164A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B3C2AEF-15D0-4F5D-AFA8-C07510B164A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B3C2AEF-15D0-4F5D-AFA8-C07510B164A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B3C2AEF-15D0-4F5D-AFA8-C07510B164A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D277061-C6F3-4FB5-AB32-7C87C343EA8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D277061-C6F3-4FB5-AB32-7C87C343EA8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D277061-C6F3-4FB5-AB32-7C87C343EA8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D277061-C6F3-4FB5-AB32-7C87C343EA8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A60D55A4-4039-4BF7-A5E1-C7594E166985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A60D55A4-4039-4BF7-A5E1-C7594E166985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A60D55A4-4039-4BF7-A5E1-C7594E166985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A60D55A4-4039-4BF7-A5E1-C7594E166985}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8804227A-0A89-4601-8372-0447A2BA0D5B}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/mesen42
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MADStore.Core\\MADStore.Core.csproj
+		SccProjectName1 = MADStore.Core
+		SccLocalPath1 = MADStore.Core
+		SccProjectUniqueName2 = MADStore.Model\\MADStore.Model.csproj
+		SccProjectName2 = MADStore.Model
+		SccLocalPath2 = MADStore.Model
+		SccProjectUniqueName3 = MADStore.DAL\\MADStore.DAL.csproj
+		SccProjectName3 = MADStore.DAL
+		SccLocalPath3 = MADStore.DAL
+		SccProjectUniqueName4 = MADStore.BLL\\MADStore.BLL.csproj
+		SccProjectName4 = MADStore.BLL
+		SccLocalPath4 = MADStore.BLL
+		SccProjectUniqueName5 = MADStore.UI.MVC\\MADStore.UI.MVC.csproj
+		SccProjectName5 = MADStore.UI.MVC
+		SccLocalPath5 = MADStore.UI.MVC
+	EndGlobalSection
+EndGlobal

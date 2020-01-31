@@ -1,0 +1,13 @@
+C:\Users\KO\Source\Workspaces\MADStore\MADStore\MADStore.Model\bin\Debug\MADStore.Model.dll.config
+C:\Users\KO\Source\Workspaces\MADStore\MADStore\MADStore.Model\bin\Debug\MADStore.Model.dll
+C:\Users\KO\Source\Workspaces\MADStore\MADStore\MADStore.Model\bin\Debug\MADStore.Model.pdb
+C:\Users\KO\Source\Workspaces\MADStore\MADStore\MADStore.Model\bin\Debug\MADStore.Core.dll
+C:\Users\KO\Source\Workspaces\MADStore\MADStore\MADStore.Model\bin\Debug\EntityFramework.dll
+C:\Users\KO\Source\Workspaces\MADStore\MADStore\MADStore.Model\bin\Debug\MADStore.Core.pdb
+C:\Users\KO\Source\Workspaces\MADStore\MADStore\MADStore.Model\bin\Debug\MADStore.Core.dll.config
+C:\Users\KO\Source\Workspaces\MADStore\MADStore\MADStore.Model\bin\Debug\EntityFramework.xml
+C:\Users\KO\Source\Workspaces\MADStore\MADStore\MADStore.Model\obj\Debug\MADStore.Model.csprojAssemblyReference.cache
+C:\Users\KO\Source\Workspaces\MADStore\MADStore\MADStore.Model\obj\Debug\MADStore.Model.csproj.CoreCompileInputs.cache
+C:\Users\KO\Source\Workspaces\MADStore\MADStore\MADStore.Model\obj\Debug\MADStore.Model.csproj.CopyComplete
+C:\Users\KO\Source\Workspaces\MADStore\MADStore\MADStore.Model\obj\Debug\MADStore.Model.dll
+C:\Users\KO\Source\Workspaces\MADStore\MADStore\MADStore.Model\obj\Debug\MADStore.Model.pdb

@@ -1,0 +1,430 @@
+﻿@using MADStore.Model
+@model Tuple<List<User>, User> 
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 class="title text-center">Kullanıcı Onay - Red İşlemleri</h2>
+
+<div class="row" id="onay">
+    <div class="col-md-12">
+        <form class="form" method="post" action="">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th>Name</th>
+                            <th>Job Position</th>
+                            <th>Since</th>
+                            <th class="text-right">Salary</th>
+                            <th class="text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (User item in Model.Item1)
+                        {
+                            <tr>
+                                <td class="text-center">@item.ID</td>
+                                <td>@item.Name</td>
+                                <td>@item.Surname</td>
+                                <td>@item.Email</td>
+                                <td class="td-actions text-right">
+                                    @using (Html.BeginForm("Approve", "Admin", FormMethod.Post))
+                                    {
+                                        <button type="submit" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                            <i class="material-icons">edit</i>
+                                        </button>
+                                    }
+
+                                    @using (Html.BeginForm("DisApprove", "Admin", FormMethod.Post))
+                                    {
+                                        <button type="submit" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                            <i class="material-icons">close</i>
+                                        </button>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+                        @*<div class="row" id="onay">
+                                <div class="col-md-12">
+                                    <form class="form" method="post" action="">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-center">#</th>
+                                                        <th>Name</th>
+                                                        <th>Job Position</th>
+                                                        <th>Since</th>
+                                                        <th class="text-right">Salary</th>
+                                                        <th class="text-right">Actions</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-center">1</td>
+                                                        <td>Andrew Mike</td>
+                                                        <td>Develop</td>
+                                                        <td>2013</td>
+                                                        <td class="text-right">€ 99,225</td>
+                                                        <td class="td-actions text-right">
+                                                            @using (Html.BeginForm("Approve", "Admin", FormMethod.Post))
+                                                            {
+                                                                <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                                    <i class="material-icons">edit</i>
+                                                                </button>
+                                                            }
+
+                                                            @using (Html.BeginForm("DisApprove", "Admin", FormMethod.Post))
+                                                            {
+                                                                <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                                    <i class="material-icons">close</i>
+                                                                </button>
+                                                            }
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+
+                                                        <td class="text-center">2</td>
+                                                        <td>John Doe</td>
+                                                        <td>Design</td>
+                                                        <td>2012</td>
+                                                        <td class="text-right">€ 89,241</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" class="btn btn-info btn-round" data-original-title="" title="">
+                                                                <i class="material-icons">person</i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-success btn-round" data-original-title="" title="">
+                                                                <i class="material-icons">edit</i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-danger btn-round" data-original-title="" title="">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">3</td>
+                                                        <td>Alex Mike</td>
+                                                        <td>Design</td>
+                                                        <td>2010</td>
+                                                        <td class="text-right">€ 92,144</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" class="btn btn-info btn-simple" data-original-title="" title="">
+                                                                <i class="material-icons">person</i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-success btn-simple" data-original-title="" title="">
+                                                                <i class="material-icons">edit</i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-danger btn-simple" data-original-title="" title="">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">4</td>
+                                                        <td>Mike Monday</td>
+                                                        <td>Marketing</td>
+                                                        <td>2013</td>
+                                                        <td class="text-right">€ 49,990</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" class="btn btn-info btn-round" data-original-title="" title="">
+                                                                <i class="material-icons">person</i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-success btn-round" data-original-title="" title="">
+                                                                <i class="material-icons">edit</i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-danger btn-round" data-original-title="" title="">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-center">5</td>
+                                                        <td>Paul Dickens</td>
+                                                        <td>Communication</td>
+                                                        <td>2015</td>
+                                                        <td class="text-right">€ 69,201</td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
+                                                                <i class="material-icons">person</i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                                <i class="material-icons">edit</i>
+                                                            </button>
+                                                            <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                                <i class="material-icons">close</i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>*@
+                        <br />
+                        <hr />
+                        <br />
+                        <h2 class="title text-center">Modelist Kaydı Oluştur</h2>
+
+
+                        <div class="row" style="margin-left:20px;">
+                            <div class="col-md-12">
+                                <form class="form" method="post" action="">
+
+                                    <div class="card-content">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">email</i>
+                                            </span>
+                                            @Html.TextBoxFor(a => a.Item2.Email, new { @class = "form-control", type = "email", placeholder = "E-mail Giriniz..." })
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">lock_outline</i>
+                                            </span>
+                                            @Html.TextBoxFor(a => a.Item2.Password, new { @class = "form-control", type = "password", placeholder = " Şifre Giriniz..." })
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">person</i>
+                                            </span>
+                                            @Html.TextBoxFor(a => a.Item2.Name, new { @class = "form-control", placeholder = "Adınızı Giriniz..." })
+                                        </div>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="material-icons">person</i>
+                                            </span>
+                                            @Html.TextBoxFor(a => a.Item2.Surname, new { @class = "form-control", placeholder = "Soyadınızı Giriniz..." })
+                                        </div>
+
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">phone</i>
+                                        </span>
+                                        @Html.TextBoxFor(a => a.Item2.Phone, new { @class = "form-control", placeholder = "Telefon Giriniz ..." })
+                                    </div>
+
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="material-icons">store</i>
+
+                                        </span>
+                                        @Html.TextBoxFor(a => a.Item2.Address, new { @class = "form-control", placeholder = "Adres Giriniz..." })
+                                    </div>
+                                    <div>
+                                        <input type="submit" name="name" value="KAYIT OL" class="btn btn-danger btn-default btn-block" style="background:linear-gradient(60deg, white,#FF9800,black); width:350px; font-size:14px;">
+                                    </div>
+
+                                    <br /><hr /><br />
+
+                                    <h2 class="title text-center">Ürün İşlemleri - Ekleme </h2>
+
+                                    <div class="fileinput fileinput-new text-center col-sm-offset-4" data-provides="fileinput">
+                                        <div class="fileinput-new thumbnail img-raised">
+                                            <img src="../Content/MadStorePage/assets/img/image_placeholder.jpg" alt="...">
+                                        </div>
+                                        <div class="fileinput-preview fileinput-exists thumbnail img-raised" style=""></div>
+                                        <div>
+                                            <span class="btn btn-raised btn-round btn-default btn-file">
+                                                <span class="fileinput-new">Select image</span>
+                                                <span class="fileinput-exists">Change</span>
+                                                <input type="hidden"><input type="file" name="...">
+                                                <div class="ripple-container"></div>
+                                            </span>
+                                            <a href="#pablo" class="btn btn-danger btn-round fileinput-exists" data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" style="margin-left:20px;">
+                                        <div class="col-md-12">
+                                            <form class="form" method="post" action="">
+
+                                                <div class="card-content">
+
+
+                                                    @*Kategori combobox*@
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="material-icons">email</i>
+                                                        </span>
+                                                        @Html.TextBoxFor(a => a.Item2.Email, new { @class = "form-control", type = "email", placeholder = "Marka Adı Giriniz..." })
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="material-icons">lock_outline</i>
+                                                        </span>
+                                                        @Html.TextBoxFor(a => a.Item2.Password, new { @class = "form-control", type = "password", placeholder = "Ürün Başlığını Giriniz..." })
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="material-icons">person</i>
+                                                        </span>
+                                                        @Html.TextBoxFor(a => a.Item2.Name, new { @class = "form-control", placeholder = "Ürünün Açıklamasını Giriniz..." })
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon">
+                                                            <i class="material-icons">person</i>
+                                                        </span>
+                                                        @Html.TextBoxFor(a => a.Item2.Surname, new { @class = "form-control", placeholder = "Soyadınızı Giriniz..." })
+                                                    </div>
+
+                                                </div>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">phone</i>
+                                                    </span>
+                                                    @Html.TextBoxFor(a => a.Item2.Phone, new { @class = "form-control", placeholder = "Telefon Giriniz ..." })
+                                                </div>
+
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">
+                                                        <i class="material-icons">store</i>
+
+                                                    </span>
+                                                    @Html.TextBoxFor(a => a.Item2.Address, new { @class = "form-control", placeholder = "Adres Giriniz..." })
+                                                </div>
+                                                <div>
+                                                    <input type="submit" name="name" value="KAYIT OL" class="btn btn-danger btn-default btn-block" style="background:linear-gradient(60deg, white,#FF9800,black); width:350px; font-size:14px;">
+                                                </div>
+
+                                                <br /><hr /><br />
+
+                                                <div class="form-group label-floating is-empty">
+                                                    <label class="control-label">With Floating Label</label>
+                                                    <input type="email" class="form-control">
+                                                    <span class="material-input"></span>
+                                                </div>
+
+                                                <h2 class="title text-center">Ürün İşlemleri - Güncelle / Sil</h2>
+
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="table-responsive">
+                                                            <table class="table table-striped">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="text-center">#</th>
+                                                                        <th>Name</th>
+                                                                        <th>Job Position</th>
+                                                                        <th>Since</th>
+                                                                        <th class="text-right">Salary</th>
+                                                                        <th class="text-right">Actions</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="text-center">1</td>
+                                                                        <td>Andrew Mike</td>
+                                                                        <td>Develop</td>
+                                                                        <td>2013</td>
+                                                                        <td class="text-right">€ 99,225</td>
+                                                                        <td class="td-actions text-right">
+                                                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
+                                                                                <i class="material-icons">person</i>
+                                                                            </button>
+                                                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                                                <i class="material-icons">edit</i>
+                                                                            </button>
+                                                                            <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                                                <i class="material-icons">close</i>
+                                                                            </button>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+
+                                                                        <td class="text-center">2</td>
+                                                                        <td>John Doe</td>
+                                                                        <td>Design</td>
+                                                                        <td>2012</td>
+                                                                        <td class="text-right">€ 89,241</td>
+                                                                        <td class="td-actions text-right">
+                                                                            <button type="button" rel="tooltip" class="btn btn-info btn-round" data-original-title="" title="">
+                                                                                <i class="material-icons">person</i>
+                                                                            </button>
+                                                                            <button type="button" rel="tooltip" class="btn btn-success btn-round" data-original-title="" title="">
+                                                                                <i class="material-icons">edit</i>
+                                                                            </button>
+                                                                            <button type="button" rel="tooltip" class="btn btn-danger btn-round" data-original-title="" title="">
+                                                                                <i class="material-icons">close</i>
+                                                                            </button>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-center">3</td>
+                                                                        <td>Alex Mike</td>
+                                                                        <td>Design</td>
+                                                                        <td>2010</td>
+                                                                        <td class="text-right">€ 92,144</td>
+                                                                        <td class="td-actions text-right">
+                                                                            <button type="button" rel="tooltip" class="btn btn-info btn-simple" data-original-title="" title="">
+                                                                                <i class="material-icons">person</i>
+                                                                            </button>
+                                                                            <button type="button" rel="tooltip" class="btn btn-success btn-simple" data-original-title="" title="">
+                                                                                <i class="material-icons">edit</i>
+                                                                            </button>
+                                                                            <button type="button" rel="tooltip" class="btn btn-danger btn-simple" data-original-title="" title="">
+                                                                                <i class="material-icons">close</i>
+                                                                            </button>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-center">4</td>
+                                                                        <td>Mike Monday</td>
+                                                                        <td>Marketing</td>
+                                                                        <td>2013</td>
+                                                                        <td class="text-right">€ 49,990</td>
+                                                                        <td class="td-actions text-right">
+                                                                            <button type="button" rel="tooltip" class="btn btn-info btn-round" data-original-title="" title="">
+                                                                                <i class="material-icons">person</i>
+                                                                            </button>
+                                                                            <button type="button" rel="tooltip" class="btn btn-success btn-round" data-original-title="" title="">
+                                                                                <i class="material-icons">edit</i>
+                                                                            </button>
+                                                                            <button type="button" rel="tooltip" class="btn btn-danger btn-round" data-original-title="" title="">
+                                                                                <i class="material-icons">close</i>
+                                                                            </button>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-center">5</td>
+                                                                        <td>Paul Dickens</td>
+                                                                        <td>Communication</td>
+                                                                        <td>2015</td>
+                                                                        <td class="text-right">€ 69,201</td>
+                                                                        <td class="td-actions text-right">
+                                                                            <button type="button" rel="tooltip" class="btn btn-info" data-original-title="" title="">
+                                                                                <i class="material-icons">person</i>
+                                                                            </button>
+                                                                            <button type="button" rel="tooltip" class="btn btn-success" data-original-title="" title="">
+                                                                                <i class="material-icons">edit</i>
+                                                                            </button>
+                                                                            <button type="button" rel="tooltip" class="btn btn-danger" data-original-title="" title="">
+                                                                                <i class="material-icons">close</i>
+                                                                            </button>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+
+                                </form>
+                            </div>
+                        </div>

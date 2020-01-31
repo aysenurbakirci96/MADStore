@@ -1,0 +1,10 @@
+﻿@using MADStore.Model
+@model List<Category>
+
+
+        @foreach (Category item in Model)
+        {
+            //Tıklanınca yönlendirme yapmasını önlemek için adını javascript tanımladık.
+
+            <li id="menu_@item.ID" style="margin-left:-50px;"><a href='javascript:void(0)' onclick="CategoryByProductList(@item.ID)">@item.Name</a></li>
+        }

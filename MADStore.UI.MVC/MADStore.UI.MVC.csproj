@@ -1,0 +1,641 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A60D55A4-4039-4BF7-A5E1-C7594E166985}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MADStore.UI.MVC</RootNamespace>
+    <AssemblyName>MADStore.UI.MVC</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.2.0.0\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.MVC4.3.2.0.0\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\elbise\img10.jpg" />
+    <Content Include="Content\Images\elbise\img11.jpg" />
+    <Content Include="Content\Images\elbise\img12.jpg" />
+    <Content Include="Content\Images\elbise\img13.jpg" />
+    <Content Include="Content\Images\elbise\img14.jpg" />
+    <Content Include="Content\Images\elbise\img15.jpg" />
+    <Content Include="Content\Images\elbise\img31.jpg" />
+    <Content Include="Content\Images\etek\img20.jpg" />
+    <Content Include="Content\Images\etek\img21.jpg" />
+    <Content Include="Content\Images\etek\img22.jpg" />
+    <Content Include="Content\Images\etek\img23.jpg" />
+    <Content Include="Content\Images\etek\img24.jpg" />
+    <Content Include="Content\Images\gomlek\img16.jpg" />
+    <Content Include="Content\Images\gomlek\img17.jpg" />
+    <Content Include="Content\Images\gomlek\img18.jpg" />
+    <Content Include="Content\Images\gomlek\img19.jpg" />
+    <Content Include="Content\Images\pantolon\img25.jpg" />
+    <Content Include="Content\Images\pantolon\img26.jpg" />
+    <Content Include="Content\Images\pantolon\img27.jpg" />
+    <Content Include="Content\Images\pantolon\img28.jpg" />
+    <Content Include="Content\Images\pantolon\img29.jpg" />
+    <Content Include="Content\Images\pantolon\img30.jpg" />
+    <Content Include="Content\Images\elbise\img1.jpg" />
+    <Content Include="Content\Images\placeholder.gif" />
+    <Content Include="Content\Images\tshirt\img2.jpg" />
+    <Content Include="Content\Images\tshirt\img3.jpg" />
+    <Content Include="Content\Images\tshirt\img4.jpg" />
+    <Content Include="Content\Images\tshirt\img5.jpg" />
+    <Content Include="Content\Images\tshirt\img6.jpg" />
+    <Content Include="Content\Images\tshirt\img7.jpg" />
+    <Content Include="Content\Images\tshirt\img8.jpg" />
+    <Content Include="Content\Images\tshirt\img9.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\b_1.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\b_2.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\b_3.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\b_4.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\card-profile.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\card-profile.png" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\cards-test.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\cards-test.png" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\content-test.png" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\demo.css" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\ex-about-us.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\ex-blog-post.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\ex-blog-posts.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\ex-contact.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\ex-landing.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\ex-login.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\ex-pricing.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\ex-product.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\ex-profile.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\ex-register.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\features-5.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\f_1.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\f_2.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\f_3.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\f_4.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\f_5.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\harvard.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\h_1.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\h_2.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\h_3.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\h_4.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\microsoft.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\modernizr.js" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\m_1.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\m_2.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\pro_1.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\pro_2.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\pro_3.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\pro_4.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\p_1.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\p_2.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\p_3.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\p_4.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\p_5.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\stanford.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\team_1.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\team_2.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\team_3.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\team_4.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\team_5.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\test1.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\test2.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\test3.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\t_1.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\t_2.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\t_3.jpg" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\vertical-nav.css" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\vertical-nav.js" />
+    <Content Include="Content\MadStorePage\assets\assets-for-demo\vodafone.jpg" />
+    <Content Include="Content\MadStorePage\assets\css\bootstrap.min.css" />
+    <Content Include="Content\MadStorePage\assets\css\material-kit.css" />
+    <Content Include="Content\MadStorePage\assets\img\apple-icon.png" />
+    <Content Include="Content\MadStorePage\assets\img\arrow-left.cur" />
+    <Content Include="Content\MadStorePage\assets\img\arrow-left.png" />
+    <Content Include="Content\MadStorePage\assets\img\arrow-right.cur" />
+    <Content Include="Content\MadStorePage\assets\img\arrow-right.png" />
+    <Content Include="Content\MadStorePage\assets\img\bg.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\bg0.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\bg10.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\bg11.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\bg12.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\bg2.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\bg3.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\bg5.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\bg6.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\bg7.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\bg8.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\bg9.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\city.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\dg1.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\dg10.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\dg2.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\dg3.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\dg6.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\dg9.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\blog1.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\blog2.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\blog3.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\blog4.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\blog5.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\blog6.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\blog7.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\blog8.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-blog1.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-blog2.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-blog3.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-blog4.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-blog5.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-blog6.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-blog8.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-product1.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-product2.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-product3.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-product4.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-profile1.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-profile2.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-profile4.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-profile5.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-profile6.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-profile7.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-project1.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-project2.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-project3.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-project4.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-project5.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\card-project6.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\chris0.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\chris1.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\chris3.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\chris4.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\chris5.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\chris6.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\chris7.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\chris8.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\chris9.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\city.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\color1.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\color2.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\color3.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\dolce.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\ecommerce-header.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\ecommerce-tips2.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\gucci.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\office1.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\office2.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\office3.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\office4.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\office5.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\product1.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\product2.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\product3.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\product4.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\suit-1.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\suit-2.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\suit-3.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\suit-4.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\suit-5.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\suit-6.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\examples\tom-ford.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\faces\avatar.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\faces\camp.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\faces\card-profile1-square.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\faces\card-profile2-square.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\faces\card-profile4-square.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\faces\card-profile5-square.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\faces\card-profile6-square.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\faces\christian.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\faces\kendall.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\faces\marc.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\favicon.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\AD.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\AE.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\AG.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\AM.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\AR.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\AT.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\AU.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\BE.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\BF.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\BG.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\BO.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\BR.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\CA.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\CD.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\CG.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\CH.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\CL.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\CM.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\CN.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\CO.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\CZ.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\DE.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\DJ.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\DK.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\DZ.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\EE.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\EG.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\ES.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\FI.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\FR.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\GA.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\GB.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\GM.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\GT.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\HN.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\HT.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\HU.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\ID.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\IE.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\IL.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\IN.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\IQ.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\IR.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\IT.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\JM.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\JO.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\JP.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\KG.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\KN.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\KP.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\KR.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\KW.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\KZ.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\LA.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\LB.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\LC.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\LS.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\LU.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\LV.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\MG.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\MK.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\ML.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\MM.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\MT.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\MX.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\NA.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\NE.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\NG.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\NI.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\NL.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\NO.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\OM.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\PA.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\PE.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\PG.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\PK.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\PL.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\PT.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\PY.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\QA.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\RO.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\RU.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\RW.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\SA.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\SE.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\SG.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\SL.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\SN.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\SO.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\SV.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\TD.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\TJ.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\TL.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\TR.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\TZ.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\UA.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\US.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\VE.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\VN.png" />
+    <Content Include="Content\MadStorePage\assets\img\flags\YE.png" />
+    <Content Include="Content\MadStorePage\assets\img\home_icon.png" />
+    <Content Include="Content\MadStorePage\assets\img\image_placeholder.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\landing.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\loading-bubbles.svg" />
+    <Content Include="Content\MadStorePage\assets\img\logo.png" />
+    <Content Include="Content\MadStorePage\assets\img\mad_logo.png" />
+    <Content Include="Content\MadStorePage\assets\img\mad_logo2.png" />
+    <Content Include="Content\MadStorePage\assets\img\mad_logo3.png" />
+    <Content Include="Content\MadStorePage\assets\img\office2.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\placeholder.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\presentation\components.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\presentation\components2.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\product1.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\product2.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\product3.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\profile.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\sections\bgi_01.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\sections\bgi_02.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\sections\bgi_03.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\sections\bgi_04.png" />
+    <Content Include="Content\MadStorePage\assets\img\sections\bgi_05.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\sections\bgi_06.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\sections\bgi_07.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\sections\bgi_08.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\sections\bgi_09.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\sections\bgi_10.jpg" />
+    <Content Include="Content\MadStorePage\assets\img\sections\bgi_11.png" />
+    <Content Include="Content\MadStorePage\assets\img\sections\iphone.png" />
+    <Content Include="Content\MadStorePage\assets\img\sections\iphone2.png" />
+    <Content Include="Content\MadStorePage\assets\img\urun_icon.png" />
+    <Content Include="Content\MadStorePage\assets\js\bootstrap-datetimepicker.js" />
+    <Content Include="Content\MadStorePage\assets\js\bootstrap-selectpicker.js" />
+    <Content Include="Content\MadStorePage\assets\js\bootstrap-tagsinput.js" />
+    <Content Include="Content\MadStorePage\assets\js\bootstrap.min.js" />
+    <Content Include="Content\MadStorePage\assets\js\jasny-bootstrap.min.js" />
+    <Content Include="Content\MadStorePage\assets\js\jquery.flexisel.js" />
+    <Content Include="Content\MadStorePage\assets\js\jquery.min.js" />
+    <Content Include="Content\MadStorePage\assets\js\material-kit.js" />
+    <Content Include="Content\MadStorePage\assets\js\material.min.js" />
+    <Content Include="Content\MadStorePage\assets\js\moment.min.js" />
+    <Content Include="Content\MadStorePage\assets\js\nouislider.min.js" />
+    <Content Include="Content\MadStorePage\examples\about-us.html" />
+    <Content Include="Content\MadStorePage\examples\blog-post.html" />
+    <Content Include="Content\MadStorePage\examples\blog-posts.html" />
+    <Content Include="Content\MadStorePage\examples\contact-us.html" />
+    <Content Include="Content\MadStorePage\examples\ecommerce.html" />
+    <Content Include="Content\MadStorePage\examples\landing-page.html" />
+    <Content Include="Content\MadStorePage\examples\login-page.html" />
+    <Content Include="Content\MadStorePage\examples\pricing.html" />
+    <Content Include="Content\MadStorePage\examples\product-page.html" />
+    <Content Include="Content\MadStorePage\examples\profile-page.html" />
+    <Content Include="Content\MadStorePage\examples\Register.html" />
+    <Content Include="Content\MadStorePage\index.html" />
+    <Content Include="Content\MadStorePage\presentation.html" />
+    <Content Include="Content\MadStorePage\sections.html" />
+    <Content Include="Content\MadStorePage\template.html" />
+    <Content Include="Content\MadStorePage\tutorial-components.html" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="login-page.html" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\MadStorePage\assets\js\_DS_Store" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\plugins\_plugin-bootstrap-select.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\plugins\_plugin-datetime-picker.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\plugins\_plugin-nouislider.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\sections\_blogs.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\sections\_contactus.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\sections\_features.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\sections\_footers.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\sections\_headers.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\sections\_pricing.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\sections\_projects.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\sections\_social-subscribe-lines.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\sections\_team.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\sections\_testimonials.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_alerts.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_buttons.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_cards.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_carousel.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_checkboxes.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_colors.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_dialogs.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_dividers.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_dropdown.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_example-pages.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_fileupload.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_flexisel.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_form.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_images.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_import-bs-less.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_import-bs-sass.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_info-areas.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_inputs-size.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_inputs.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_labels.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_lists.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_media.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_misc.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_mixins.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_navbar.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_pagination.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_panels.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_pills.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_popups.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_progress.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_radios.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_responsive.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_ripples.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_sections.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_select.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_shadows.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_tables.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_tabs.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_tags.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_togglebutton.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_typography.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_variables.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_variables_bootstrap.scss" />
+    <Content Include="Content\MadStorePage\assets\sass\material-kit\_welljumbo.scss" />
+    <Content Include="Content\MadStorePage\assets\_DS_Store" />
+    <Content Include="Content\MadStorePage\CHANGELOG.md" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ModelistController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="CustomFilter\LoginFilter.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CartItemViewModel.cs" />
+    <Compile Include="Models\MyCart.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\MailHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Shared\_AccountLayout.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Shared\_UserLayout.cshtml" />
+    <Content Include="Views\Shared\_ModelistPage.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\User\Products.cshtml" />
+    <Content Include="Views\User\_CategoryMenu.cshtml" />
+    <Content Include="Views\User\_CategoryOfProducts.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Cart\_CartButton.cshtml" />
+    <Content Include="Views\Cart\_CartList.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Modelist\" />
+    <Folder Include="Views\Order\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MADStore.BLL\MADStore.BLL.csproj">
+      <Project>{7d277061-c6f3-4fb5-ab32-7c87c343ea8a}</Project>
+      <Name>MADStore.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MADStore.Core\MADStore.Core.csproj">
+      <Project>{c7f216db-0002-4f96-96d0-22631e77526f}</Project>
+      <Name>MADStore.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MADStore.Model\MADStore.Model.csproj">
+      <Project>{0eb6fefc-96d3-4649-b238-903c8e8daac2}</Project>
+      <Name>MADStore.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57883</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57883/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div id="dvSepet" class="col-lg-8">
+    @Html.Action("_CartList", "Cart")
+</div>
+
+@section scripts
+{
+    <script>
+        function CartUpdate(deger, gid)
+        {
+            $.ajax
+            ({
+                    type: "Get",
+                    url: '@Url.Action("UpdateCart", "Cart")',
+                    data: { amount: deger, id: gid },
+                    success: function (data)
+                    {
+                        $("#dvSepet").html(data)
+                    }
+            })
+        }
+
+        function DeleteItemCart(gid) //Buradaki DeleteItemCart ismi _CartListteki onclickle aynı isim olmalıdır.
+        {
+            var cevap = confirm("Ürünü sepetinizden silmek istediğinize emin misiniz ?")
+
+            if (cevap)
+            {
+                $.ajax
+                ({
+                    type: "Get",
+                    url: '@Url.Action("DeleteItemCart", "Cart")',
+                    data : { id: gid },
+                    success : function (data)
+                    {
+                        $("#dvSepet").html(data);
+                    }
+                })
+            }
+        }
+
+    </script>
+}
+
+@*@RenderSection("scripts", false)*@
